@@ -1,5 +1,66 @@
 .menu {
-  &__icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 16px;
+  &__logo-layout>*:last-child:before,  &__buttons-layout>*:last-child:before{
+    content: "";
+    display: none;
+    width : 2px;
+    height : 32px;
+    background-color : var(--color-gray-3);
+    position : absolute;
+    left: 0;
+    top : 50%;
+    transform: translateY(-50%);
+    border-radius: 1px;
+  }
+  &__logo-layout {
+    display: flex;
+    align-items: center;
+    &>*:first-child {
+      @media (min-width: map-get($breakpoints, 'tablet')) {
+        margin-right : 20px;
+      }
+    }
+    &>*:last-child {
+      padding-left : 16px;
+      @media (min-width: map-get($breakpoints, 'tablet')) {
+        padding-left : 22px;
+        position: relative;
+        &:before {
+          display: block;
+        }
+      }
+    }
+  }
+  &__buttons-layout {
+    display: flex;
+    align-items: center;
+    &>*:first-child {
+      padding-right : 16px;
+    }
+    &>*:last-child {
+      padding-left : 18px;
+      position: relative;
+      &:before {
+        display: block;
+      }
+    }
+  }
+  &__buttons {
+    display: flex;
+    column-gap: 16px;
+    &--visible-on {
+      &--tablet {
+        display: none;
+        @media (min-width: map-get($breakpoints, 'tablet')) and (max-width: map-get($breakpoints_max_width, 'tablet')){
+          display: flex;
+        }
+      }
+    }
+  }
+  &__button {
     cursor: pointer;
     border-radius: 100%;
     overflow: hidden;
@@ -8,6 +69,7 @@
     width : 40px;
     height : 40px;
     padding : 0;
+    display: block;
     &:hover {
       box-shadow: 0 0 20px 5px  rgba(255, 62, 121, .4);
     }

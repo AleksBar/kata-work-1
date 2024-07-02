@@ -2,3 +2,6 @@ $breakpoints: (
         tablet: 768px,
         desctop: 1120px
 );
+$breakpoints_max_width: (
+        tablet: calc(1120 - 0.2) + px,
+)

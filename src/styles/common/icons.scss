@@ -11,6 +11,8 @@ $icons_urls : (
 .icon {
   width : 100%;
   height : 100%;
+  overflow: hidden;
+  display: block;
   @each $name, $url in $icons_urls {
     &--#{$name} {
       background-image : $url;
