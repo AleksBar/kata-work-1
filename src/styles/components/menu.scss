@@ -1,0 +1,15 @@
+.menu {
+  &__icon {
+    cursor: pointer;
+    border-radius: 100%;
+    overflow: hidden;
+    border: none;
+    transition: box-shadow .15s;
+    width : 40px;
+    height : 40px;
+    padding : 0;
+    &:hover {
+      box-shadow: 0 0 20px 5px  rgba(255, 62, 121, .4);
+    }
+  }
+}

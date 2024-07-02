@@ -1,0 +1,16 @@
+$container_paddings_on_breakpoints : (
+        tablet: 24px,
+        desctop: 34px
+);
+
+.container {
+  margin : 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  @each $breakpoint_name, $padding_value in $container_paddings_on_breakpoints {
+    @media (min-width: map-get($breakpoints, $breakpoint_name)) {
+      padding-left: $padding_value;
+      padding-right: $padding_value;
+    }
+  }
+}

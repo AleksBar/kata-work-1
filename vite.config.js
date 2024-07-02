@@ -8,6 +8,7 @@ export default defineConfig({
         sourceAttr: 'file',
     })],
     build: {
+        minify: false,
         rollupOptions: {
             output: {
                 assetFileNames: ( assetInfo ) => {
